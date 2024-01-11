@@ -4,6 +4,25 @@ _OakText6::
 	prompt
 
 _OakText7::
+	text "Right! So your"
+	line "name is <PLAYER>!"
+	prompt
+
+_OakText8::
+	text "That boy has been"
+	line "hanging around my"
+	cont "lab lately."
+
+	para "Do you know him?"
+	line "What's his name?"
+	prompt
+
+_OakText9::
+	text "Oh, so his name is"
+	line "<RIVAL> then!"
+	prompt
+
+_OakText10::
 	text "<PLAYER>, are you"
 	line "ready?"
 
