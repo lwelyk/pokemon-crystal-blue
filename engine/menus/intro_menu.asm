@@ -80,7 +80,7 @@ NewGame:
 PlayerProfileSetup:
 	farcall CheckMobileAdapterStatus
 	jr c, .ok
-	farcall InitGender
+	; farcall InitGender
 	ret
 .ok
 	ld c, 0
@@ -630,7 +630,7 @@ Continue_DisplayGameTime:
 	jp PrintNum
 
 OakSpeech:
-	farcall InitClock
+	; farcall InitClock
 	call RotateFourPalettesLeft
 	call ClearTilemap
 
@@ -654,7 +654,7 @@ OakSpeech:
 	call RotateThreePalettesRight
 	call ClearTilemap
 
-	ld a, WOOPER
+	ld a, NIDORINO
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
@@ -824,7 +824,7 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "RED@@@@@@@@"
 .Kris:
 	db "KRIS@@@@@@@"
 
@@ -866,7 +866,7 @@ NameRivalIntro:
 	ret
 
 .RivalName:
-	db "SILVER@@@@@"
+	db "BLUE@@@@@@"
 
 ShowRivalNamingChoices:
 	ld hl, RivalNameMenuHeaderIntro
@@ -890,10 +890,10 @@ RivalNameMenuHeaderIntro:
 	db 5 ; items
 	db "NEW NAME@"
 RivalNames:
-	db "SILVER@"
-	db "KAMON@"
-	db "OSCAR@"
-	db "MAX@"
+	db "BLUE@"
+	db "GARY@"
+	db "JACK@"
+	db "JOHN@"
 	db 2 ; title indent
 	db " NAME @" ; title
 
