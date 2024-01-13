@@ -24,7 +24,7 @@ DEF MAP_LENGTH EQU _RS
 	const ROUTE
 	const INDOOR
 	const CAVE
-	const ENVIRONMENT_5
+	const FOREST
 	const GATE
 	const DUNGEON
 DEF NUM_ENVIRONMENTS EQU const_value - 1
@@ -137,5 +137,3 @@ DEF KANTO_FLYPOINT EQU const_value
 	const FLY_CINNABAR
 	const FLY_INDIGO
 DEF NUM_FLYPOINTS EQU const_value
-
-DEF MAX_OUTDOOR_SPRITES EQU 23 ; see engine/overworld/overworld.asm
