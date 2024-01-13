@@ -5,16 +5,6 @@ ENDM
 
 
 SECTION "Tileset Data 1", ROMX
-
-TilesetKantoGFX::
-INCBIN "gfx/tilesets/kanto.2bpp.lz"
-
-TilesetKantoMeta::
-INCBIN "data/tilesets/kanto_metatiles.bin"
-
-TilesetKantoColl::
-INCLUDE "data/tilesets/kanto_collision.asm"
-
 Tileset0GFX::
 TilesetJohtoGFX::
 INCBIN "gfx/tilesets/johto.2bpp.lz"
@@ -451,3 +441,15 @@ INCBIN "data/tilesets/traditional_house_metatiles.bin"
 
 TilesetTraditionalHouseColl::
 INCLUDE "data/tilesets/traditional_house_collision.asm"
+
+
+SECTION "Tileset Data 12", ROMX
+
+TilesetKantoGFX::
+INCBIN "gfx/tilesets/kanto.2bpp.lz"
+
+TilesetKantoMeta::
+INCBIN "data/tilesets/kanto_metatiles.bin"
+
+TilesetKantoColl::
+INCLUDE "data/tilesets/kanto_collision.asm"
