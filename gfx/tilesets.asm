@@ -297,26 +297,22 @@ TilesetOmanyteWordRoomGFX::
 TilesetAerodactylWordRoomGFX::
 INCBIN "gfx/tilesets/ruins_of_alph.2bpp.lz"
 
+
+TilesetHoOhWordRoomMeta::
+TilesetKabutoWordRoomMeta::
+TilesetOmanyteWordRoomMeta::
+TilesetAerodactylWordRoomMeta::	
 TilesetRuinsOfAlphMeta::
 INCBIN "data/tilesets/ruins_of_alph_metatiles.bin"
 
 TilesetRuinsOfAlphColl::
 INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 
-
 SECTION "Tileset Data 8", ROMX
 
-TilesetHoOhWordRoomMeta::
-INCBIN "data/tilesets/ho_oh_word_room_metatiles.bin"
+TilesetHouseKantoGFX::
+INCBIN "gfx/tilesets/house_kanto.2bpp.lz"
 
-TilesetKabutoWordRoomMeta::
-INCBIN "data/tilesets/kabuto_word_room_metatiles.bin"
-
-TilesetOmanyteWordRoomMeta::
-INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
-
-TilesetAerodactylWordRoomMeta::
-INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
 
 SECTION "Tileset Data 9", ROMX
 
@@ -453,3 +449,12 @@ INCBIN "data/tilesets/kanto_metatiles.bin"
 
 TilesetKantoColl::
 INCLUDE "data/tilesets/kanto_collision.asm"
+
+TilesetHouseKantoAttr::
+INCBIN "data/tilesets/house_kanto_attributes.bin"
+
+TilesetHouseKantoColl::
+INCLUDE "data/tilesets/house_kanto_collision.asm"
+
+TilesetHouseKantoMeta::
+INCBIN "data/tilesets/house_kanto_metatiles.bin"
