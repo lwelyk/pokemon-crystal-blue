@@ -33,24 +33,14 @@ RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
 
 RedsMomText1:
-	text "Hi!"
+	text "MOM: Right."
+	line "All boys leave"
+	cont "home some day."
+	cont "It said so on TV."
 
-	para "RED's been away"
-	line "for a long time."
-
-	para "He hasn't called"
-	line "either, so I have"
-
-	para "no idea where he"
-	line "is or what he's"
-	cont "been doing."
-
-	para "They say that no"
-	line "word is proof that"
-
-	para "he's doing fine,"
-	line "but I do worry"
-	cont "about him."
+	para "PROF.OAK, next"
+	line "door, is looking"
+	cont "for you."
 	done
 
 RedsMomText2:
@@ -67,9 +57,12 @@ RedsMomText2:
 	done
 
 RedsHouse1FTVText:
-	text "They have programs"
-	line "that aren't shown"
-	cont "in JOHTO…"
+	text "There's a movie"
+	line "on TV. Four boys"
+	cont "are walking on"
+	cont "railroad tracks."
+
+	para "I better go too."
 	done
 
 RedsHouse1F_MapEvents:
