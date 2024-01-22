@@ -532,6 +532,12 @@ DoPlayerMovement::
 	db $80 | LEFT
 	db $80 | RIGHT
 
+.SpinStep
+	turn_in_down
+	turn_in_up
+	turn_in_left
+	turn_in_right
+
 .StandInPlace:
 	ld a, 0
 	ld [wPlayerTurningDirection], a
@@ -539,11 +545,6 @@ DoPlayerMovement::
 	ld [wMovementAnimation], a
 	xor a
 	ret
-.SpinStep
-	turn_in_down
-	turn_in_up
-	turn_in_left
-	turn_in_right
 
 ._WalkInPlace:
 	ld a, 0
@@ -833,6 +834,7 @@ CheckStandingOnIce::
 .not_ice
 	and a
 	ret
+
 CheckSpinning::
 	ld a, [wPlayerTile]
 	cp COLL_STOP_SPIN
