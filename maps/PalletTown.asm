@@ -201,8 +201,8 @@ PalletTown_MapEvents:
 	warp_event 12, 11, OAKS_LAB, 1
 
 	def_coord_events
-	coord_event  8,  1, SCENE_PALLET_TOWN_OAK_STOPS_YOU, OakStopsYouLeft
-	coord_event  9,  1, SCENE_PALLET_TOWN_OAK_STOPS_YOU, OakStopsYouRight
+	coord_event 10,  1, SCENE_PALLET_TOWN_OAK_STOPS_YOU, OakStopsYouLeft
+	coord_event 11,  1, SCENE_PALLET_TOWN_OAK_STOPS_YOU, OakStopsYouRight
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign
