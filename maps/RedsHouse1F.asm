@@ -13,15 +13,26 @@ RedHouse1FNoopScene:
 RedsMom:
 	faceplayer
 	opentext
-	checkevent EVENT_MET_REDS_MOM
-	iftrue .MetAlready
+	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
+	iftrue .Heal
 	writetext RedsMomText1
 	waitbutton
 	closetext
-	setevent EVENT_MET_REDS_MOM
 	end
-.MetAlready:
-	writetext RedsMomText2
+.Heal:
+	writetext RedsHouse1FMomYouShouldRestText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext RedsHouse1FMomLookingGreatText
 	waitbutton
 	closetext
 	end
@@ -31,6 +42,9 @@ RedsHouse1FTV:
 
 RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
+
+RedsHouse1FWrongSide:
+	jumptext RedsHouse1FTVWrongSideText
 
 RedsMomText1:
 	text "MOM: Right."
@@ -43,17 +57,18 @@ RedsMomText1:
 	cont "for you."
 	done
 
-RedsMomText2:
-	text "I worry about RED"
-	line "getting hurt or"
+RedsHouse1FMomYouShouldRestText:
+	text "MOM: <PLAYER>!"
+	line "You should take a"
+	cont "quick rest."
+	prompt
 
-	para "sick, but he's a"
-	line "boy. I'm proud"
-
-	para "that he is doing"
-	line "what he wants to"
-
-	para "do."
+RedsHouse1FMomLookingGreatText:
+	text "MOM: Oh good!"
+	line "You and your"
+	cont "#MON are"
+	cont "looking great!"
+	cont "Take care now!"
 	done
 
 RedsHouse1FTVText:
@@ -63,6 +78,10 @@ RedsHouse1FTVText:
 	cont "railroad tracks."
 
 	para "I better go too."
+	done
+
+RedsHouse1FTVWrongSideText:
+	text "Oops, wrong side."
 	done
 
 RedsHouse1F_MapEvents:
@@ -78,7 +97,9 @@ RedsHouse1F_MapEvents:
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, RedsHouse1FBookshelf
 	bg_event  1,  1, BGEVENT_READ, RedsHouse1FBookshelf
-	bg_event  3,  1, BGEVENT_READ, RedsHouse1FTV
+	bg_event  3,  1, BGEVENT_UP, RedsHouse1FTV
+	bg_event  3,  1, BGEVENT_LEFT, RedsHouse1FWrongSide
+	bg_event  3,  1, BGEVENT_RIGHT, RedsHouse1FWrongSide
 
 	def_object_events
 	object_event  5,  4, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RedsMom, -1
