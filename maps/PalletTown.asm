@@ -12,6 +12,7 @@ PalletTown_MapScripts:
 	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
 
 PalletTownNoop1Scene:
+PalletTownProfessorOak:
 	end
 
 PalletTownFlypointCallback:
@@ -44,7 +45,6 @@ OakStopsYouLeft:
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 30
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToYouMovementLeft
-	sjump OakStopsYouPart2
 	opentext
 	writetext PalletTownOakItsUnsafeText
 	waitbutton
@@ -68,11 +68,11 @@ OakStopsYouRight:
 	applymovement PALLETTOWN_OAK, PalletTownOakWalkToLabRight
 	sjump OakTakesYouToLab
 
-OakTakesYoutoLab:
+OakTakesYouToLab:
 	stopfollow
 	disappear PALLETTOWN_OAK
 	applymovement PLAYER, PalletTownPlayerWalkUp
-	warp OAKS_LAB 4, 8
+	warp OAKS_LAB, 4, 11
 	end
 
 PalletTownPlayerWalkUp:
@@ -115,7 +115,7 @@ PalletTownOakWalkToLabLeft:
 	step UP
 	step_end
 
-PalletTownOakWalkToLabLeft:
+PalletTownOakWalkToLabRight:
 	step DOWN
 	step LEFT
 	step LEFT
@@ -213,4 +213,4 @@ PalletTown_MapEvents:
 	def_object_events
 	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
-	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownPRofessorOak
+	object_event  8,  5, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownProfessorOak, EVENT_OAK_WILL_STOP_YOU
