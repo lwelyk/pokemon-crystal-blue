@@ -566,6 +566,29 @@ InitialSetDSTFlag:
 	text_far _DSTIsThatOKText
 	text_end
 
+SetDST:
+.DSTLoop:
+	ld hl, OakTimeIsItDSTText
+	call PrintText
+	call YesNoBox
+	jr nc, .DoneDST
+.NoDSTLoop:
+	call InitialClearDSTFlag
+	call YesNoBox
+	jr nc, .DoneDST
+	sjump .DSTLoop
+.SetDSTLoop:
+	call InitialSetDSTFlag
+	call YesNoBox
+	jr nc, .DoneDST
+	sjump .DSTLoop
+.DoneDST:
+	ret
+
+OakTimeIsItDSTText:
+	text_far _OakTimeIsItDSTText
+	text_end
+
 InitialClearDSTFlag:
 	ld a, [wDST]
 	res 7, a

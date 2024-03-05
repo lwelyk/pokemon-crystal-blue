@@ -630,7 +630,9 @@ Continue_DisplayGameTime:
 	jp PrintNum
 
 OakSpeech:
-	; farcall InitClock
+	farcall InitClock
+	farcall SetDayOfWeek
+	farcall SetDST
 	call RotateFourPalettesLeft
 	call ClearTilemap
 

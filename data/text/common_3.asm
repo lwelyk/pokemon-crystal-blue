@@ -1533,3 +1533,8 @@ _MomLostGearBookletText::
 	para "Come back again in"
 	line "a while."
 	prompt
+
+_OakTimeIsItDSTText::
+	text "Is it Daylight"
+	line "Saving Time now?"
+	done
